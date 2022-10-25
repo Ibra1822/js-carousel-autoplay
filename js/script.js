@@ -20,7 +20,6 @@ btnTop.innerHTML= `<i class="fa-solid fa-chevron-up"></i>`;
 
 btnDo.innerHTML= `<i class="fa-solid fa-chevron-down">`;
 
-btnTop.classList.add('dnone')
 
 // ------------ creati bottoni 
 
@@ -62,7 +61,6 @@ clock = setInterval(next, 1000);
   
 
 
-
 //----------------------------------------------------
 pic[c].classList.add('active') 
 
@@ -78,23 +76,22 @@ pic[c].classList.add('active')
 
   pic[c].classList.add('active')
 
-  btnTop.classList.remove('dnone')
-  
-  if(c === pic.length -1){
-    btnDo.classList.add('dnone')
-  } 
+
  }
 
  function prev(){
 
   pic[c].classList.remove('active')
   c--
+
+  if(c < 0){
+    c = pic.length -1
+  }
+
   pic[c].classList.add('active')
 
   btnDo.classList.remove('dnone')
 
-  if(c === 0){
-    btnTop.classList.add('dnone')
-  }
+  
  
 }
